@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\RAYA CHORBADZHIYSKA\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\CSharpAdvance\\SimpleCalculations\\SimpleCalculations.csproj",
+      "projectUniqueName": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\SimpleCalculations\\SimpleCalculations.csproj",
       "projectName": "SimpleCalculations",
-      "projectPath": "C:\\Users\\User\\Desktop\\CSharpAdvance\\SimpleCalculations\\SimpleCalculations.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\CSharpAdvance\\SimpleCalculations\\obj\\",
+      "projectPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\SimpleCalculations\\SimpleCalculations.csproj",
+      "packagesPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\SimpleCalculations\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RAYA CHORBADZHIYSKA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

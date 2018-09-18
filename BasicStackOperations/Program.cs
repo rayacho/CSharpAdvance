@@ -7,7 +7,7 @@ namespace BasicStackOperations
     {
         static void Main(string[] args)
         {
-            var input = Console.ReadLine().Split(' ').Select(int.Parse);
+            var input = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
             var stack = new Stack<int>();
             var nNumbers = Console.ReadLine().Split(' ').Select(int.Parse);
             var existence = "false";
@@ -19,30 +19,31 @@ namespace BasicStackOperations
             int s = stack.Pop();
             int x = stack.Pop();
             var stackOfNumbers = new Stack<int>();
-            var stackOfNumbers2 = new Stack<int>();
             foreach(var chislo in nNumbers)
             {
                 stackOfNumbers.Push(chislo);
-                stackOfNumbers2.Push(chislo);
+            }
+            var smallestStack = new Stack<int>();
+            smallestStack.Push(stackOfNumbers.Peek());
+            for(int i = 0; i < s; i++)
+            {
+                stackOfNumbers.Pop();
+            }
+            foreach(var chislo in stackOfNumbers)
+            {
                 if(chislo == x)
                 {
                     existence = "true";
                 }
             }
-            var smallestStack = new Stack<int>();
-            smallestStack.Push(stackOfNumbers.Peek());
-            for(int j = 0; j < stackOfNumbers2.Count; j++)
+            for (int j = 0; j < stackOfNumbers.Count; j++)
             {
-                if(smallestStack.Peek() > stackOfNumbers2.Peek())
+                if (smallestStack.Peek() > stackOfNumbers.Peek())
                 {
-                    smallestStack.Push(stackOfNumbers2.Pop());
+                    smallestStack.Push(stackOfNumbers.Pop());
                 }
             }
-            for(int i = 0; i < s; i++)
-            {
-                stackOfNumbers.Pop();
-            }
-            if(existence == "true")
+            if (existence == "true")
             {
                 Console.WriteLine("true");
             }

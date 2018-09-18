@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\RAYA CHORBADZHIYSKA\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\CSharpAdvance\\BasicStackOperations\\BasicStackOperations.csproj",
+      "projectUniqueName": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\BasicStackOperations\\BasicStackOperations.csproj",
       "projectName": "BasicStackOperations",
-      "projectPath": "C:\\Users\\User\\Desktop\\CSharpAdvance\\BasicStackOperations\\BasicStackOperations.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\CSharpAdvance\\BasicStackOperations\\obj\\",
+      "projectPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\BasicStackOperations\\BasicStackOperations.csproj",
+      "packagesPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RAYA CHORBADZHIYSKA\\Desktop\\CSharpAdvanced\\CSharpAdvance\\BasicStackOperations\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RAYA CHORBADZHIYSKA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
