@@ -1,0 +1,10 @@
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\bin\Debug\netcoreapp2.1\RecursiveFibonacci.deps.json
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\bin\Debug\netcoreapp2.1\RecursiveFibonacci.runtimeconfig.json
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\bin\Debug\netcoreapp2.1\RecursiveFibonacci.runtimeconfig.dev.json
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\bin\Debug\netcoreapp2.1\RecursiveFibonacci.dll
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\bin\Debug\netcoreapp2.1\RecursiveFibonacci.pdb
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\obj\Debug\netcoreapp2.1\RecursiveFibonacci.csproj.CoreCompileInputs.cache
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\obj\Debug\netcoreapp2.1\RecursiveFibonacci.AssemblyInfoInputs.cache
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\obj\Debug\netcoreapp2.1\RecursiveFibonacci.AssemblyInfo.cs
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\obj\Debug\netcoreapp2.1\RecursiveFibonacci.dll
+C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\RecursiveFibonacci\obj\Debug\netcoreapp2.1\RecursiveFibonacci.pdb
