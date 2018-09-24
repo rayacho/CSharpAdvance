@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
-using 
+using System.Collections.Generic;
 
-namespace MatrixOfPalindromes
+namespace _1.MatrixOfPalindromes
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var input = Console.ReadLine().Split(' ').Select(int.Parse).toArray();
+            var input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
             char[,] matrix = new char[input[0], input[1]];
             char a = 'a';
             char b = 'a';
