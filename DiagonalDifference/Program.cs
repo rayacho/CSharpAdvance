@@ -1,48 +1,51 @@
 ﻿using System;
+
 using System.Linq;
-using System.Collections.Generic;
+
 namespace DiagonalDifference
+
 {
+
     class Program
+
     {
+
         static void Main(string[] args)
+
         {
             int n = int.Parse(Console.ReadLine());
-            int[,] matrix = new int[n,n];
-            int primarySum = 0, secondarySum = 0, difference = 0;
-
-            for(int rows = 0; rows < n; rows++)
-            {
-                var rowValues = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-                for (int cols = 0; cols < n; cols++)
-                {
-                    matrix[rows, cols] = rowValues[cols];
-                }
-            }
-            primarySum = matrix[0, 0] + matrix[n - 1, n - 1];
-            secondarySum = matrix[0, n - 1] + matrix[n - 1, 0];
-
-            for (int rows = 1; rows < n - 2; rows++)
-            {
-                for (int cols = 1; cols < n - 2; cols++)
-                {
-                    primarySum += matrix[rows, cols];
-                }
-            }
             
+            long[][] matrix = new long[n][];
+            
+            for (int i = 0; i < n; i++)
 
-            for (int rows = n - 2; rows < 1; rows--)
             {
-                for (int cols = n - 2; cols < 1; cols--)
-                {
-                    secondarySum += matrix[rows, cols];
-                }
+
+                matrix[i] = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
+
             }
 
-         
-            difference = Math.Abs(primarySum - secondarySum);
-            Console.WriteLine(difference);
-            Console.ReadKey();
+            long primarySum = 0;
+            
+            for (int row = 0; row < n; row++)
+
+            {
+
+                primarySum += matrix[row][row];
+
+            }
+
+            long secondarySum = 0;
+
+            for (int row = 0, col = n - 1; row < n; row++, col--)
+
+            {
+                secondarySum += matrix[row][col];
+
+            }
+            Console.WriteLine(Math.Abs(primarySum - secondarySum));
         }
+
     }
+
 }

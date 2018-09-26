@@ -7,7 +7,7 @@ namespace _3x3MaximalSum
     {
         static void Main(string[] args)
         {
-            int[] rowsAndColumns = Console.ReadLine().Split(new string[' '],StringSplitOptions.None).Select(int.Parse).ToArray();
+            var rowsAndColumns = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
             int[,] matrix = new int[rowsAndColumns[0], rowsAndColumns[1]];
             int maxSum = int.MinValue;
             int startRow = 0;
@@ -15,32 +15,39 @@ namespace _3x3MaximalSum
 
             for (int rows = 0; rows < matrix.GetLength(0); rows++)
             {
-                var rowValues = Console.ReadLine().Split(new string[' '], StringSplitOptions.None).Select(int.Parse).ToArray();
+                int[] rowValues = Console.ReadLine().Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
                 for (int cols = 0; cols < matrix.GetLength(1); cols++)
                 {
                     matrix[rows, cols] = rowValues[cols];
                 }
             }
 
-            for (int rows = 0; rows < matrix.GetLength(0) - 2; rows++)
+            for (int row = 0; row < matrix.GetLength(0) - 2; row++)
             {
-                for (int cols = 0; cols < matrix.GetLength(1) - 2; cols++)
+                for (int col = 0; col < matrix.GetLength(1) - 2; col++)
                 {
-                    int currentSum = matrix[rows, cols] + matrix[rows + 1, cols] + matrix[rows, cols + 1] + matrix[rows + 1, cols + 1]
-                        + matrix[rows,cols+2] + matrix[rows+1,cols+2] + matrix[rows+2,cols+2] + matrix[rows+2,cols] + matrix[rows+2,cols+1];
+                    int currentSum = matrix[row, col] + matrix[row + 1, col] + matrix[row, col + 1] 
+                        + matrix[row + 1, col + 1]
+                        + matrix[row, col + 2] + matrix[row + 1, col + 2] + matrix[row + 2, col + 2] + matrix[row + 2, col] 
+                        + matrix[row + 2,col + 1];
                     if (currentSum > maxSum)
                     {
                         maxSum = currentSum;
-                        startCol = cols;
-                        startRow = rows;
+                        startCol = col;
+                        startRow = row;
                     }
                 }
             }
 
             Console.WriteLine("Sum = " + maxSum);
-            Console.WriteLine(matrix[startRow, startCol] + " " + matrix[startRow, startCol + 1] + " " + matrix[startRow, startCol + 2]);
-            Console.WriteLine(matrix[startRow + 1, startCol] + " " + matrix[startRow + 1, startCol + 1] + " " + matrix[startRow + 1, startCol+2]);
-            Console.WriteLine(matrix[startRow + 2, startCol] + " " + matrix[startRow + 2, startCol + 1] + " " + matrix[startRow + 2,startCol + 2]);
+            for(int r = startRow; r <= startRow + 2; r++)
+            {
+                for(int c = startCol; c <= startCol + 2; c++)
+                {
+                    Console.Write(matrix[r, c] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
