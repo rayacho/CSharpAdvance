@@ -50,12 +50,13 @@ namespace TheHeiganDance
 
                 }
 
-                string heiganFinish = heiganHealth > 0 ? heiganHealth.ToString("f2") : "Defeated!";
-                string playerFinish = playerHealth > 0 ? playerHealth.ToString() : $"Killed by {causeOfDeath}";
-                Console.WriteLine($"Heigan: {heiganFinish}");
-                Console.WriteLine($"Player: {playerFinish}");
-                Console.WriteLine($"Final position: {playerRow}, {playerCol}");
+     
             }
+            string heiganFinish = heiganHealth > 0 ? heiganHealth.ToString("f2") : "Defeated!";
+            string playerFinish = playerHealth > 0 ? playerHealth.ToString() : $"Killed by {causeOfDeath}";
+            Console.WriteLine($"Heigan: {heiganFinish}");
+            Console.WriteLine($"Player: {playerFinish}");
+            Console.WriteLine($"Final position: {playerRow}, {playerCol}");
         }
 
 

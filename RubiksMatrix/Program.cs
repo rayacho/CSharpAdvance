@@ -1,223 +1,296 @@
 ﻿using System;
+
+using System.Collections.Generic;
+
 using System.Linq;
 
 namespace RubiksMatrix
+
 {
+
     class Program
+
     {
-        private static int[,] matrix;
 
-        private static int rows;
-
-        private static int columns;
-        
-        static void Main(string[] args)
+        public static void Main()
 
         {
 
-            int[] dimensions = Console.ReadLine()
+            int[] size = Console.ReadLine()
 
                 .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
 
-                .Select(int.Parse).ToArray();
+                .Select(int.Parse)
 
-            rows = dimensions[0];
-
-            columns = dimensions[1];
-
-            matrix = new int[dimensions[0], dimensions[1]];
+                .ToArray();
             
-            int number = 0;
+            int[][] rubik = new int[size[0]][];
             
-            for (int row = 0; row < rows; row++)
+            for (int i = 0; i < size[0]; i++)
+
             {
-                for (int col = 0; col < columns; col++)
+
+                rubik[i] = new int[size[1]];
+
+                for (int j = 0; j < size[1]; j++)
 
                 {
-                    matrix[row, col] = ++number;
+
+                    rubik[i][j] = i * (size[1]) + j + 1;
+
                 }
 
             }
             
-            int commandCount = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < commandCount; i++)
-
-            {
-                ParseCommand();
-
-            }
-            RearrangeMatrix();
-        }
-        
-        private static void RearrangeMatrix()
-
-        {
-
-            int expected = 1;
-
-            for (int row = 0; row < rows; row++)
-
-            {
-
-                for (int col = 0; col < columns; col++)
-
-                {
-
-                    if (matrix[row, col] == expected)
-
-                    {
-
-                        Console.WriteLine("No swap required");
-
-                    }
-
-                    else
-
-                    {
-
-                        for (int r = 0; r < rows; r++)
-
-                        {
-
-                            for (int c = 0; c < columns; c++)
-
-                            {
-
-                                if (matrix[r, c] == expected)
-
-                                {
-
-                                    int temp = matrix[row, col];
-
-                                    matrix[row, col] = matrix[r, c];
-
-                                    matrix[r, c] = temp;
-
-                                    Console.WriteLine($"Swap({row},{col}) with({r},{c})");
-
-                                    break;
-
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                    expected++;
-
-                }
-
-            }
-
-        }
-
-        private static void ParseCommand()
-
-        {
-
-            string[] commandArgs = Console.ReadLine().Split();
-
-            string command = commandArgs[1];
-
-            int index = int.Parse(commandArgs[0]);
-
-            int rotations = int.Parse(commandArgs[2]);
-
-            switch (command)
-
-            {
-
-                case "up":
-
-                    MoveColumn(index, rows - (rotations % rows));
-
-                    break;
-
-                case "down":
-
-                    MoveColumn(index, (rotations % rows));
-
-                    break;
-
-                case "left":
-
-                    MoveRow(index, columns - (rotations % columns));
-
-                    break;
-
-                case "right":
-
-                    MoveRow(index, (rotations % columns));
-
-                    break;
-
-            }
-
-        }
-    private static void MoveRow(int index, int rotations)
-
-        {
-
-            //rotations %= columns;
-
-            int[] tempArray = new int[columns];
-
-            for (int col = 0; col < columns; col++)
-
-            {
-
-                int replacementIndex = col + rotations;
-                replacementIndex %= columns;
-                tempArray[replacementIndex] = matrix[index, col];
-
-            }
-
-            for (int col = 0; col < columns; col++)
-
-            {
-                matrix[index, col] = tempArray[col];
-            }
-
-        }
-        
-        private static void MoveRow()
-
-        {
-
-
-
-        }
-        
-        private static void MoveColumn(int index, int rotations)
-
-        {
+            int numberOfCommands = int.Parse(Console.ReadLine());
             
-            // rotations %= rows;
-
-            int[] tempArray = new int[rows];
-
-            for (int row = 0; row < columns; row++)
+            for (int i = 0; i < numberOfCommands; i++)
 
             {
-            
-                int replacementIndex = row + rotations;
+
+                string[] command = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                int comObj = int.Parse(command[0]);
+
+                int comMoves = int.Parse(command[2]);
                 
-                replacementIndex %= rows;
+                switch (command[1])
 
-                tempArray[replacementIndex] = matrix[index, row];
+                {
+
+                    case "up":
+
+                        moveUp(rubik, comObj, comMoves);
+
+                        break;
+
+
+
+                    case "down":
+
+                        moveDown(rubik, comObj, comMoves);
+
+                        break;
+
+
+
+                    case "right":
+
+                        moveRight(rubik, comObj, comMoves);
+
+                        break;
+
+
+
+                    case "left":
+
+                        moveLeft(rubik, comObj, comMoves);
+
+                        break;
+
+                }
 
             }
+            
+            int numOfElements = size[0] * size[1];
+            
+            int[] flatRubik = new int[numOfElements];
 
-            for (int row = 0; row < rows; row++)
+            int k = -1;
+            
+            for (int i = 0; i < size[0]; i++)
 
             {
 
-                matrix[row, index] = tempArray[row];
+                for (int j = 0; j < size[1]; j++)
+
+                {
+
+                    k++;
+
+                    flatRubik[k] = rubik[i][j];
+
+                }
+
+            }
+
+            for (int ie = 0; ie < numOfElements; ie++)
+
+            {
+
+                if (flatRubik[ie] == ie + 1)
+
+                {
+
+                    Console.WriteLine("No swap required");
+
+                }
+
+                else
+
+                {
+
+                    int temp = flatRubik[ie];
+
+                    int srch = Array.IndexOf(flatRubik, ie + 1);
+                    
+                    flatRubik[srch] = temp;
+
+                    flatRubik[ie] = ie + 1;
+                    
+                    Console.WriteLine($"Swap ({ie / size[0]}, {ie % size[1]}) with ({srch / size[0]}, {srch % size[1]})");
+
+                }
+
+            }
+            
+        }
+        
+        private static void moveUp(int[][] matrix, int col, int moves)
+
+        {
+
+            int rows = matrix.Length;
+
+            int rest = moves % rows;
+
+            Queue<int> column = new Queue<int>();
+            
+            for (int j = 0; j < rows; j++)
+
+            {
+
+                column.Enqueue(matrix[j][col]);
+
+            }
+            
+
+            for (int i = 0; i < rest; i++)
+
+            {
+
+                column.Enqueue(column.Dequeue());
+
+            }
+
+            for (int j = 0; j < rows; j++)
+
+            {
+
+                matrix[j][col] = column.Dequeue();
+
             }
 
         }
+        
+        private static void moveDown(int[][] matrix, int col, int moves)
+
+        {
+
+            int rows = matrix.Length;
+
+            int rest = moves % rows;
+
+            Queue<int> column = new Queue<int>();
+            
+            for (int j = (rows - 1); j >= 0; j--)
+
+            {
+
+                column.Enqueue(matrix[j][col]);
+
+            }
+            
+            for (int i = 0; i < rest; i++)
+
+            {
+
+                column.Enqueue(column.Dequeue());
+
+            }
+            
+            for (int j = (rows - 1); j >= 0; j--)
+
+            {
+
+                matrix[j][col] = column.Dequeue();
+
+            }
+
+        }
+        
+        private static void moveLeft(int[][] matrix, int row, int moves)
+
+        {
+
+            int cols = matrix[row].Length;
+
+            int rest = moves % cols;
+
+            Queue<int> rowQueue = new Queue<int>();
+            
+            for (int i = 0; i < cols; i++)
+
+            {
+
+                rowQueue.Enqueue(matrix[row][i]);
+
+            }
+            
+            for (int j = 0; j < rest; j++)
+
+            {
+
+                rowQueue.Enqueue(rowQueue.Dequeue());
+
+            }
+            
+            for (int i = 0; i < cols; i++)
+
+            {
+
+                matrix[row][i] = rowQueue.Dequeue();
+
+            }
+
+        }
+        
+        private static void moveRight(int[][] matrix, int row, int moves)
+
+        {
+
+            int cols = matrix[row].Length;
+
+            int rest = moves % cols;
+
+            Queue<int> rowQueue = new Queue<int>();
+            
+            for (int i = (cols - 1); i >= 0; i--)
+
+            {
+
+                rowQueue.Enqueue(matrix[row][i]);
+
+            }
+            
+            for (int j = 0; j < rest; j++)
+
+            {
+
+                rowQueue.Enqueue(rowQueue.Dequeue());
+
+            }
+            
+            for (int i = (cols - 1); i >= 0; i--)
+
+            {
+
+                matrix[row][i] = rowQueue.Dequeue();
+
+            }
+
+        }
+
     }
+
 }
