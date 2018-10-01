@@ -50,6 +50,11 @@ namespace TheHeiganDance
 
                 }
 
+                string heiganFinish = heiganHealth > 0 ? heiganHealth.ToString("f2") : "Defeated!";
+                string playerFinish = playerHealth > 0 ? playerHealth.ToString() : $"Killed by {causeOfDeath}";
+                Console.WriteLine($"Heigan: {heiganFinish}");
+                Console.WriteLine($"Player: {playerFinish}");
+                Console.WriteLine($"Final position: {playerRow}, {playerCol}");
             }
         }
 
@@ -70,15 +75,15 @@ namespace TheHeiganDance
             int[][] damageArea = new int[2][];
             damageArea[0] = new int[3];
             damageArea[1] = new int[3];
-            for (int i = 0; i >= -1; i--)
+            for (int i = 0; i < 3; i++)
             {
                
-                damageArea[0][i] = rowHit - i;
+                damageArea[0][i] = rowHit + i - 1;
             }
-            for (int i = 0; i >= -1; i--)
+            for (int i = 0; i < 3; i++)
             {
                
-                damageArea[1][i] = colHit - i;
+                damageArea[1][i] = colHit + i - 1;
             }
             return damageArea;
         }
@@ -108,11 +113,11 @@ namespace TheHeiganDance
             }
             else
             {
-                takeDamage();
+                takeDamage(spellName);
             }
         }
 
-        private static void takeDamage()
+        private static void takeDamage(string spellName)
         {
             if (spellName == "Cloud")
             {
