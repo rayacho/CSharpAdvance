@@ -7,7 +7,7 @@ namespace Ex1
     {
         static void Main(string[] args)
         {
-            using (var stream = new StreamReader("Ex1.cs"))
+            using (var stream = new StreamReader(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\Ex1\Ex1.cs"))
             {
                 var lineNumber = 1;
 

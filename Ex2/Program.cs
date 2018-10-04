@@ -7,7 +7,7 @@ namespace Ex2
     {
         static void Main(string[] args)
         {
-            using (var readStream = new StreamReader("Program.cs"))
+            using (var readStream = new StreamReader(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\Ex2\Program.cs"))
             {
                 using (var writeStream = new StreamWriter("reversed.txt"))
                 {
