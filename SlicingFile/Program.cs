@@ -31,7 +31,7 @@ namespace SlicingFile
 
 					if (destinationDirectory == string.Empty)
 					{
-						destinationDirectory = "./";
+						destinationDirectory = @"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\SlicingFile\";
 					}
 					string currentPart = destinationDirectory + $"Part-{i}.{extension}";
 					using (FileStream writer = new FileStream(currentPart,FileMode.Create))
@@ -48,10 +48,13 @@ namespace SlicingFile
 						}
 					}
 				}
-
-
+				
 			}
 		
+		}
+		static void Zip(List<string> files, string destinationDirectory)
+		{
+
 		}
 	}
 

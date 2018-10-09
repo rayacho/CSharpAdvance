@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyBinaryFile", "CopyBinar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlicingFile", "SlicingFile\SlicingFile.csproj", "{54EE2859-B814-4A1C-ADD3-2A77303B4722}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryTraversal", "DirectoryTraversal\DirectoryTraversal.csproj", "{652D111A-C146-423D-B454-6BD4A46C23F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{54EE2859-B814-4A1C-ADD3-2A77303B4722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54EE2859-B814-4A1C-ADD3-2A77303B4722}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54EE2859-B814-4A1C-ADD3-2A77303B4722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652D111A-C146-423D-B454-6BD4A46C23F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652D111A-C146-423D-B454-6BD4A46C23F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652D111A-C146-423D-B454-6BD4A46C23F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652D111A-C146-423D-B454-6BD4A46C23F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -286,6 +292,7 @@ Global
 		{E7C36259-49E8-477E-BAF4-2D95689F1F79} = {0D97030B-64AF-468F-8768-CD44BB85C1D7}
 		{40758C08-F51E-4DD3-9D6F-35BC56403FDA} = {0D97030B-64AF-468F-8768-CD44BB85C1D7}
 		{54EE2859-B814-4A1C-ADD3-2A77303B4722} = {0D97030B-64AF-468F-8768-CD44BB85C1D7}
+		{652D111A-C146-423D-B454-6BD4A46C23F4} = {0D97030B-64AF-468F-8768-CD44BB85C1D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F796753A-3387-4A22-B910-36461150A156}
