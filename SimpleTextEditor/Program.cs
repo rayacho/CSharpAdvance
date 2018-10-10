@@ -12,10 +12,12 @@ namespace SimpleTextEditor
             var oldVersions = new Stack<string>();
             oldVersions.Push("");
             var text = new StringBuilder();
+
             for (int i = 0; i < commandsCount;  i++)
             {
                 string[] commandInput = Console.ReadLine().Split();
                 int command = int.Parse(commandInput[0]);
+
                 switch(command)
                 {
                     case 1:

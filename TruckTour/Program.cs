@@ -10,6 +10,7 @@ namespace TruckTour
         {
             int pumpsCount = int.Parse(Console.ReadLine());
             Queue<int[]> queue = new Queue<int[]>();
+
             for(int petrolDistance = 0; petrolDistance < pumpsCount; petrolDistance++)
             {
                 var pump = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
@@ -20,14 +21,15 @@ namespace TruckTour
             {
                 int fuel = 0;
                 bool isSolution = true;
+
                 for(int pumpsPassed = 0; pumpsPassed < pumpsCount; pumpsPassed++)
                 {
-                    var currentPump = queue.Dequeue();
-                    
+                    var currentPump = queue.Dequeue();                					
                     int pumpFuel = currentPump[0];
                     int nextPumpDistance = currentPump[1];
                     queue.Enqueue(currentPump);
                     fuel += pumpFuel - nextPumpDistance;
+
                     if(fuel < 0)
                     {
                         currentStart += pumpsPassed;
@@ -35,6 +37,7 @@ namespace TruckTour
                         break;
                     }
                 }
+
                 if(isSolution)
                 {
                     Console.WriteLine(currentStart);

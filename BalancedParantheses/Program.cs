@@ -11,6 +11,7 @@ namespace BalancedParantheses
             var stack = new Stack<string>();
             int times = 0;
             string balance = "NO";
+
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] == input[input.Length - i])
@@ -18,7 +19,9 @@ namespace BalancedParantheses
                     times++;
                 }
             }
+
             int timesNeeded = input.Length / 2;
+
             if (times == timesNeeded)
             {
                 balance = "YES";

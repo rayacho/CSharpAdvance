@@ -17,6 +17,7 @@ namespace SimpleCalculations
                 var firstNumber = int.Parse(stack.Pop());
                 var op = stack.Pop();
                 var secondNumber = int.Parse(stack.Pop());
+
                 if (op == "+")
                 {
                     stack.Push((firstNumber + secondNumber).ToString());
@@ -26,6 +27,7 @@ namespace SimpleCalculations
                     stack.Push((firstNumber - secondNumber).ToString());
                 }
             }
+
             Console.WriteLine(stack.Pop());
         }
     }

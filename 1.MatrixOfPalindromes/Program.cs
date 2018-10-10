@@ -12,6 +12,7 @@ namespace _1.MatrixOfPalindromes
             char[,] matrix = new char[input[0], input[1]];
             char a = 'a';
             char b = 'a';
+
             for (int rows = 0; rows < input[0]; rows++)
             {
                 for (int cols = 0; cols < input[1]; cols++)
@@ -22,6 +23,7 @@ namespace _1.MatrixOfPalindromes
                     Console.Write(" ");
                     b++;
                 }
+
                 Console.WriteLine();
                 a++;
                 b = a;

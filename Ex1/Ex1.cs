@@ -12,6 +12,7 @@ namespace Ex1
                 var lineNumber = 1;
 
                 string line;
+
                 while((line = Console.ReadLine()) != null)
                 {
                     Console.WriteLine($"Line {lineNumber}: " + line);

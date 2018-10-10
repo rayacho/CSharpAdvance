@@ -9,14 +9,17 @@ namespace ReverseNumbers
         {
             var input = Console.ReadLine().Split(' ').Select(int.Parse);
             var stack = new Stack<int>();
+
             foreach(var n in input)
             {
                 stack.Push(n);
             }
+
             while(stack.Count > 0)
             {
                 Console.Write(stack.Pop() + " ");
             }
+
             Console.ReadKey();
         }
     }

@@ -11,7 +11,6 @@ namespace _2x2SquaresInMatrix
             string[,] matrix = new string[rowsAndColumns[0], rowsAndColumns[1]];
             int times = 0;
 
-
             for (int rows = 0; rows < rowsAndColumns[0]; rows++)
             {
                 var rowValues = Console.ReadLine().Split(' ').ToArray();
@@ -32,6 +31,7 @@ namespace _2x2SquaresInMatrix
                     }
                 }
             }
+
             Console.WriteLine(times);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MatchingBrackets
 {
@@ -15,7 +16,7 @@ namespace MatchingBrackets
                 {
                     stack.Push(i);
                 }
-                if (input[i] == ')')
+				else if (input[i] == ')')
                 {
                     var startIndex = stack.Pop();
                     string reminder = input.Substring(startIndex, i - startIndex + 1);

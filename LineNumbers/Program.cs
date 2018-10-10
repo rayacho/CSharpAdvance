@@ -13,6 +13,7 @@ namespace LineNumbers
                 {
                     int lineNumber = 1;
                     string line;
+
                     while ((line = readStream.ReadLine()) != null)
                     {
                        writeStream.WriteLine($"Line {lineNumber}: " + line);

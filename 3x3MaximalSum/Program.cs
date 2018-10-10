@@ -30,6 +30,7 @@ namespace _3x3MaximalSum
                         + matrix[row + 1, col + 1]
                         + matrix[row, col + 2] + matrix[row + 1, col + 2] + matrix[row + 2, col + 2] + matrix[row + 2, col] 
                         + matrix[row + 2,col + 1];
+
                     if (currentSum > maxSum)
                     {
                         maxSum = currentSum;
@@ -46,6 +47,7 @@ namespace _3x3MaximalSum
                 {
                     Console.Write(matrix[r, c] + " ");
                 }
+
                 Console.WriteLine();
             }
         }

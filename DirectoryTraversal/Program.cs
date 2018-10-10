@@ -29,8 +29,8 @@ namespace DirectoryTraversal
 				.ThenBy(x => x.Key)
 				.ToDictionary(x => x.Key, y => y.Value);
 
-			string desktop = @"%USERPROFILE%\Desktop%\";
-			string fullFileName = desktop + "report.txt";
+			string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+			string fullFileName = desktop + "/report.txt";
 
 			using(var writer = new StreamWriter(fullFileName))
 			{
@@ -44,7 +44,9 @@ namespace DirectoryTraversal
 
 					foreach (var fileInfo in fileInfos)
 					{
+						double fileSize = (double)fileInfo.Length / 1024;
 
+						writer.WriteLine($"--{fileInfo.Name} - {fileSize:f3}kb");
 					}
 				}
 			}

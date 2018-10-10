@@ -11,9 +11,11 @@ namespace MaximumElement
             var stack = new Stack<int>();
             var maxStack = new Stack<int>();
             maxStack.Push(int.MinValue);
+
             for(int i = 0; i < N; i++)
             {
                 var command = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
                 switch(command[0])
                 {
                     case 1:

@@ -12,12 +12,14 @@ namespace Ex2
                 using (var writeStream = new StreamWriter("reversed.txt"))
                 {
                     string line;
+
                     while ((line = readStream.ReadLine()) != null)
                     {
                         for (int counter = line.Length - 1; counter >= 0; counter--)
                         {
                             writeStream.Write(line[counter]); 
                         }
+
                         writeStream.WriteLine();
                     }
                 }

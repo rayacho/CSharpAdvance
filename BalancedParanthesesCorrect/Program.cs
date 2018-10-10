@@ -14,9 +14,11 @@ namespace BalancedParanthesesCorrect
                 Console.WriteLine("NO");
                 Environment.Exit(0);
             }
+
             char[] opening = new [] { '(', '[', '{' };
             char[] closing = new [] { ')', ']', '}' };
             var stack = new Stack<char>();
+
             foreach(var element in input)
             {
                 if(opening.Contains(element))
@@ -28,6 +30,7 @@ namespace BalancedParanthesesCorrect
                     var lastElement = stack.Pop();
                     var openingIndex = Array.IndexOf(opening, lastElement);
                     var closingIndex = Array.IndexOf(closing, element);
+
                     if(openingIndex != closingIndex)
                     {
                         Console.WriteLine("NO");
@@ -35,6 +38,7 @@ namespace BalancedParanthesesCorrect
                     }
                 }
             }
+
             if (stack.Any())
             {
                 Console.WriteLine("NO");
