@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CustomComparator
@@ -10,45 +11,25 @@ namespace CustomComparator
 			Predicate<int> isOdd = x => x % 2 != 0;
 			Predicate<int> isEven = x => x % 2 == 0;
 
-			int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-			int[] evenNumbers = { };
-			int[] oddNumbers = { };
-			int i = 0, j = 0, buf;
+			List<int> input = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+			List<int> evenNumbers = new List<int>();
+			List<int> oddNumbers = new List<int>();
 
-			foreach (var number in input)
+			foreach (int number in input)
 			{
 				if (isOdd.Invoke(number))
 				{
-					oddNumbers[i] = number;
-					i++;
+					oddNumbers.Add(number);
 				}
 
 				else if(isEven.Invoke(number))
 				{
-					evenNumbers[j] = number;
-					j++;
-				}
-			}
-			
-			for(int k = 0; k < evenNumbers.Length - 1; k++)
-			{
-				if(evenNumbers[k] > evenNumbers[k+1])
-				{
-					buf = evenNumbers[k];
-					evenNumbers[k] = evenNumbers[k + 1];
-					evenNumbers[k + 1] = buf;
+					evenNumbers.Add(number);
 				}
 			}
 
-			for (int m = 0; m < evenNumbers.Length - 1; m++)
-			{
-				if (evenNumbers[m] > evenNumbers[m + 1])
-				{
-					buf = evenNumbers[m];
-					evenNumbers[m] = evenNumbers[m + 1];
-					evenNumbers[m + 1] = buf;
-				}
-			}
+			oddNumbers.Sort();
+			evenNumbers.Sort();
 
 			foreach(var even in evenNumbers)
 			{
