@@ -8,119 +8,66 @@ namespace PredicateParty
 	{
 		static void Main(string[] args)
 		{
-			Func<string, string> Double = name => $"{name}, {name} ";
-			Func<string, string> Remove = name => name = "";
-			string[] people = Console.ReadLine().Split(' ');
-			string[] command = {"", "", "" };
-			int times = 0;
+			string[] people = Console.ReadLine().Split();
+			string input;
 
-			while (command[0] != "Party!")
+			while ((input = Console.ReadLine()) != "Party!")
 			{
-				command = Console.ReadLine().Split(' ');
-				string thing = command[2];
-				int length = thing.Length;
+				var split = input.Split();
+				string funcName = split[0];
+				string criteriaName = split[1];
+				string argument = split[2];
 
-				switch (command[0])
+				Func<string[], Predicate<string>, string[]> func = null;
+
+				if (funcName == "Remove")
 				{
-					case "Double":
+					func = (names, crit) => names.Where(s => !crit(s)).ToArray();
+				}
+				else if (funcName == "Double")
+				{
+					func = (names, crit) =>
+					{
+						List<string> doubled = new List<string>();
+
+						foreach (var name in names)
 						{
-							switch (command[1])
+							if (crit(name))
 							{
-								case "StartsWith":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].StartsWith(thing))
-											{
-												Console.Write(Double(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
-								case "EndsWith":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].EndsWith(thing))
-											{
-												Console.Write(Double(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
-								case "Length":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].Length == length)
-											{
-												Console.Write(Double(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
+								doubled.Add(name);
 							}
+							doubled.Add(name);
 						}
-						break;
-					case "Remove":
-						{
-							switch (command[1])
-							{
-								case "StartsWith":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].StartsWith(thing))
-											{
-												Console.Write(Remove(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
-								case "EndsWith":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].EndsWith(thing))
-											{
-												Console.Write(Remove(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
-								case "Length":
-									{
-										for (int i = 0; i < people.Length; i++)
-										{
-											if (people[i].Length == length)
-											{
-												Console.Write(Remove(people[i]));
-												times++;
-											}
-										}
-									}
-									break;
-							}
-						}
-						break;
+
+						return doubled.ToArray();
+					};
 				}
-				if (times >= 2)
+
+				Predicate<string> criteria = null;
+
+				if (criteriaName == "StartsWith")
 				{
-					Console.WriteLine(" are going to the party!");
+					criteria = name => name.StartsWith(argument);
 				}
-				else if(times == 1)
+				else if (criteriaName == "EndsWith")
 				{
-					Console.WriteLine(" is going to the party!");
+					criteria = name => name.EndsWith(argument);
 				}
-				else if(times == 0)
+				else if (criteriaName == "Length")
 				{
-					Console.WriteLine("Nobody is going to the party!");
+					criteria = name => name.Length == int.Parse(argument);
 				}
+
+				people = func(people, criteria);
+			}
+
+			if (people.Length > 0)
+			{
+				Console.WriteLine($"{string.Join(", ", people)} are going to the party!");
+			}
+			else
+			{
+				Console.WriteLine("Nobody is going to the party!");
 			}
 		}
 	}
