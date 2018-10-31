@@ -10,7 +10,6 @@ namespace ParkingSystem
 		static int cols;
 
 		static void Main(string[] args)
-
 		{
 			int[] dimensions = Console.ReadLine().
 				Split().

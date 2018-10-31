@@ -10,7 +10,7 @@ namespace KnightsOfHonor
 		{
 			Action<string> print = message => Console.WriteLine($"Sir {message}");
 			List<string> input = Console.ReadLine().Split(' ').ToList();
-			foreach (var word in input)
+			foreach (string word in input)
 			{
 				print(word);
 			}

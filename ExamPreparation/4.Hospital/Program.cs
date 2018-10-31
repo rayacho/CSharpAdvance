@@ -8,35 +8,37 @@ namespace _04.Hospital
 	{
 		static void Main(string[] args)
 		{
-			var departments = new Dictionary<string, List<string>>();
-			var doctors = new Dictionary<string, List<string>>();
-			var line = Console.ReadLine();
+			Dictionary<string, List<string>> departments = new Dictionary<string, List<string>>();
+			Dictionary<string, List<string>> doctors = new Dictionary<string, List<string>>();
+			string line = Console.ReadLine();
 
 			while (line != "Output")
 			{
-				var tokens = line.Split().ToArray();
-				var dep = tokens[0];
-				var dfn = tokens[1] + " " + tokens[2];
-				var patient = tokens[3];
+				string[] tokens = line.Split().ToArray();
+				string dep = tokens[0];
+				string dfn = tokens[1] + " " + tokens[2];
+				string patient = tokens[3];
 				if (!departments.ContainsKey(dep))
 				{
 					departments[dep] = new List<string>();
 				}
+
 				departments[dep].Add(patient);
 				if (!doctors.ContainsKey(dfn))
 				{
 					doctors[dfn] = new List<string>();
 				}
+
 				doctors[dfn].Add(patient);
 				line = Console.ReadLine();
 			}
 			line = Console.ReadLine().Trim();
 			while (line != "End")
 			{
-				var token = line.Split().ToArray();
+				string[] token = line.Split().ToArray();
 				if (token.Length == 1)
 				{
-					foreach (var patients in departments[line])
+					foreach (string patients in departments[line])
 					{
 						Console.WriteLine(patients);
 					}
@@ -47,19 +49,19 @@ namespace _04.Hospital
 					{
 						continue;
 					}
-					var patients = departments[token[0]];
+					List<string> patients = departments[token[0]];
 					var room = patients.Skip(3 * (int.Parse(token[1]) - 1)).Take(3).OrderBy(p => p);
 
-					foreach (var patient in room)
+					foreach (string patient in room)
 					{
 						Console.WriteLine(patient);
 					}
 				}
 				else
 				{
-					var pat = doctors[line];
+					List<string> pat = doctors[line];
 					pat.Sort();
-					foreach (var patient in pat)
+					foreach (string patient in pat)
 					{
 						Console.WriteLine(patient);
 

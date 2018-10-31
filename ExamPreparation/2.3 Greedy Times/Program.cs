@@ -13,13 +13,13 @@ namespace _2._3_Greedy_Times
 			string[] itemsInput = Console.ReadLine()
 				.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-			var goldBag = new Dictionary<string, long>();
+			Dictionary<string, long> goldBag = new Dictionary<string, long>();
 			long goldQuantity = 0;
 
-			var gemBag = new Dictionary<string, long>();
+			Dictionary<string, long> gemBag = new Dictionary<string, long>();
 			long gemQuantity = 0;
 
-			var cashBag = new Dictionary<string, long>();
+			Dictionary<string, long> cashBag = new Dictionary<string, long>();
 			long cashQuantity = 0;
 
 			for (int i = 0; i < itemsInput.Length; i += 2)
@@ -69,7 +69,7 @@ namespace _2._3_Greedy_Times
 
 		private static string PrintBag(Dictionary<string, long> bag, string type, long totalAmount)
 		{
-			var resultBuilder = new StringBuilder();
+			StringBuilder resultBuilder = new StringBuilder();
 
 			resultBuilder.AppendLine($"<{type}> ${totalAmount}");
 

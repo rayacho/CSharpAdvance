@@ -18,7 +18,6 @@ namespace LegoBlocks
 				array1[i] = Console.ReadLine()
 					.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
 					.Select(int.Parse).ToArray();
-
 			}
 
 			for (int i = 0; i < n; i++)
@@ -36,10 +35,10 @@ namespace LegoBlocks
 				if (currentLength != rowLength)
 				{
 					isMatch = false;
-				}		
+				}
 				count += currentLength;
 			}
-		
+
 			if (isMatch == true)
 			{
 				int[] result = new int[count];

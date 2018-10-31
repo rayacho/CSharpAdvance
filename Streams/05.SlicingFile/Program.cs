@@ -30,7 +30,7 @@ namespace _05.SlicingFile
 		{
 			using (FileStream destination = new FileStream($"{destinationDirectory}/Assembled.mp4", FileMode.Create))
 			{
-				foreach (var file in files)
+				foreach (string file in files)
 				{
 					using (FileStream partStream = new FileStream(file, FileMode.Open))
 					{

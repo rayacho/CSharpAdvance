@@ -40,9 +40,9 @@ namespace Wardrobe
 					colours.Add(colour, clooths);
 			}
 
-			var needed = Console.ReadLine().Split(' ');
-			var color = needed[0];
-			var typeOfClothing = needed[1];
+			string[] needed = Console.ReadLine().Split(' ');
+			string color = needed[0];
+			string typeOfClothing = needed[1];
 
 			foreach(var colouur in colours)
 			{

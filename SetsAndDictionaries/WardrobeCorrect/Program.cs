@@ -26,7 +26,7 @@ namespace WardrobeCorrect
 					string[] inputClotes = clothes.Split(new char[] { ',' },
 						StringSplitOptions.RemoveEmptyEntries).ToArray();
 
-					foreach (var item in inputClotes)
+					foreach (string item in inputClotes)
 					{
 						if (!wardrobe[color].ContainsKey(item))
 						{
@@ -50,7 +50,6 @@ namespace WardrobeCorrect
 						{
 							Console.WriteLine($"* {kvpClothes.Key} - {kvpClothes.Value} (found!)");
 						}
-
 						else
 						{
 							Console.WriteLine($"* {kvpClothes.Key} - {kvpClothes.Value}");

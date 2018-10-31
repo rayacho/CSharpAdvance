@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ActionPoint
@@ -8,8 +9,8 @@ namespace ActionPoint
 		static void Main(string[] args)
 		{
 			Action<string> print = message => Console.WriteLine(message);
-			var input = Console.ReadLine().Split(' ').ToList();
-			foreach(var word in input)
+			List<string> input = Console.ReadLine().Split(' ').ToList();
+			foreach(string word in input)
 			{
 				print(word);
 			}

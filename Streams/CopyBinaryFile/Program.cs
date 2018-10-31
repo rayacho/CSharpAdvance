@@ -7,9 +7,9 @@ namespace CopyBinaryFile
     {
         static void Main(string[] args)
         {
-			using (var sourceFile = new FileStream(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\copyMe.png", FileMode.Open))
+			using (FileStream sourceFile = new FileStream(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\copyMe.png", FileMode.Open))
 			{
-				using (var destinationFile = 
+				using (FileStream destinationFile = 
 					new FileStream(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\CopyBinaryFile\copiedfile.png",
 					FileMode.Create))
 				{
@@ -17,7 +17,7 @@ namespace CopyBinaryFile
 
 					while (true)
 					{
-						var readBytesCount = sourceFile.Read(buffer, 0, buffer.Length);
+						int readBytesCount = sourceFile.Read(buffer, 0, buffer.Length);
 
 						if (readBytesCount == 0)
 

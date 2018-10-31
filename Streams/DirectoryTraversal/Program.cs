@@ -11,11 +11,11 @@ namespace DirectoryTraversal
 		{
 			string path = Console.ReadLine();
 			var filesDictionary = new Dictionary<string, List<FileInfo>>();
-			var files = Directory.GetFiles(path);
+			string[] files = Directory.GetFiles(path);
 
-			foreach(var file in files)
+			foreach(string file in files)
 			{
-				var fileInfo = new FileInfo(file);
+				FileInfo fileInfo = new FileInfo(file);
 				string extension = fileInfo.Extension;
 
 				if (!filesDictionary.ContainsKey(extension))
@@ -32,7 +32,7 @@ namespace DirectoryTraversal
 			string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 			string fullFileName = desktop + "/report.txt";
 
-			using(var writer = new StreamWriter(fullFileName))
+			using(StreamWriter writer = new StreamWriter(fullFileName))
 			{
 				foreach(var pair in filesDictionary)
 				{

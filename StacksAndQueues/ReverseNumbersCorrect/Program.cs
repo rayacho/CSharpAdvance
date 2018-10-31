@@ -4,26 +4,27 @@ using System.Linq;
 
 namespace ReverseNumbersCorrect
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var input = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-               .Select(int.Parse)
-               .ToArray();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int[] input = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+			   .Select(int.Parse)
+			   .ToArray();
 
-            var stack = new Stack<int>();
-            for (int i = 0; i < input.Length; i++)
-            {
-                stack.Push(input[i]);
-            }
+			Stack<int> stack = new Stack<int>();
+			foreach (int number in input)
+			{
+				stack.Push(number);
+			}
 
-            while (stack.Count != 0)
-            {
-                Console.Write(stack.Pop());
-                Console.Write(' ');
-            }
-        }
-    }
-    }
+			while (stack.Count != 0)
+			{
+				int num = stack.Pop();
+				Console.Write(num);
+				Console.Write(' ');
+			}
+		}
+	}
+}
 

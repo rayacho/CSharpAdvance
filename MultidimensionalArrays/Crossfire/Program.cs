@@ -12,11 +12,11 @@ namespace Crossfire
 			int[] matrixSizes = Console.ReadLine().Split().Select(int.Parse).ToArray();
 			int rows = matrixSizes[0];
 			int cols = matrixSizes[1];
-			var mainList = new List<List<int>>();
+			List<List<int>> mainList = new List<List<int>>();
 
 			for (int r = 0; r < rows; r++)
 			{
-				var rowList = new List<int>();
+				List<int> rowList = new List<int>();
 
 				for (int c = 0; c < cols; c++)
 				{

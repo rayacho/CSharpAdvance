@@ -9,8 +9,8 @@ namespace StringMatrixRotation
 	{
 		public static void Main()
 		{
-			var degrees = GetRotationDegrees();
-			var matrix = GetMatrix();
+			int degrees = GetRotationDegrees();
+			char[][] matrix = GetMatrix();
 
 			switch (degrees)
 			{
@@ -28,7 +28,7 @@ namespace StringMatrixRotation
 				for (int r = 0; r < matrix.Length; r++)
 				{
 					Console.Write(matrix[r][c]);
-				}			
+				}
 				Console.WriteLine();
 			}
 		}
@@ -50,10 +50,10 @@ namespace StringMatrixRotation
 			for (int r = matrix.Length - 1; r >= 0; r--)
 			{
 				Console.WriteLine(string.Join("", matrix[r].Reverse()));
-			}		
+			}
 		}
 
-		private static void PrintMatrix(char[][] matrix)	
+		private static void PrintMatrix(char[][] matrix)
 		{
 			foreach (var row in matrix)
 			{
@@ -63,8 +63,8 @@ namespace StringMatrixRotation
 
 		private static char[][] GetMatrix()
 		{
-			var textList = new List<string>();
-		
+			List<string> textList = new List<string>();
+
 			while (true)
 			{
 				string text = Console.ReadLine();
@@ -72,23 +72,23 @@ namespace StringMatrixRotation
 				textList.Add(text);
 			}
 
-			var rows = textList.Count();		
-			var cols = textList.Select(x => x.Count()).Max();
-			var matrix = new char[rows][];
+			int rows = textList.Count();
+			int cols = textList.Select(x => x.Count()).Max();
+			char[][] matrix = new char[rows][];
 
 			for (int row = 0; row < rows; row++)
 			{
-				var builder = new StringBuilder(textList[row]);
+				StringBuilder builder = new StringBuilder(textList[row]);
 				builder.Append(new String(' ', cols - textList[row].Length));
 				matrix[row] = builder.ToString().ToCharArray();
-			}		
+			}
 			return matrix;
 		}
 
 		private static int GetRotationDegrees()
 		{
-			var input = Console.ReadLine().Trim(); // "Rotate(degrees)"
-			var degrees = int.Parse(input.Substring("Rotate(".Length, input.Length - 1 - "Rotate(".Length));
+			string input = Console.ReadLine().Trim(); // "Rotate(degrees)"
+			int degrees = int.Parse(input.Substring("Rotate(".Length, input.Length - 1 - "Rotate(".Length));
 			degrees %= 360;
 
 			while (degrees < 0)

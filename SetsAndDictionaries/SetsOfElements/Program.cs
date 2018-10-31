@@ -8,7 +8,7 @@ namespace SetsOfElements
 	{
 		static void Main(string[] args)
 		{
-			var nm = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+			int[] nm = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 			Dictionary<int, int> numbersN = new Dictionary<int, int>();
 			Dictionary<int, int> numbersM = new Dictionary<int, int>();
 
@@ -28,7 +28,7 @@ namespace SetsOfElements
 
 			foreach (var nnumber in numbersN)
 			{
-				var key = nnumber.Key;
+				int key = nnumber.Key;
 				if (numbersM.ContainsKey(key)) Console.Write(key + " ");
 			}
 

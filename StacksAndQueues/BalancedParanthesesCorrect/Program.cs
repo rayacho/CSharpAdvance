@@ -4,49 +4,49 @@ using System.Linq;
 
 namespace BalancedParanthesesCorrect
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            char[] input = Console.ReadLine().ToCharArray();
-            if (input.Length % 2 != 0)
-            {
-                Console.WriteLine("NO");
-                Environment.Exit(0);
-            }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			char[] input = Console.ReadLine().ToCharArray();
+			if (input.Length % 2 != 0)
+			{
+				Console.WriteLine("NO");
+				Environment.Exit(0);
+			}
 
-            char[] opening = new [] { '(', '[', '{' };
-            char[] closing = new [] { ')', ']', '}' };
-            var stack = new Stack<char>();
+			char[] opening = new[] { '(', '[', '{' };
+			char[] closing = new[] { ')', ']', '}' };
+			Stack<char> stack = new Stack<char>();
 
-            foreach(var element in input)
-            {
-                if(opening.Contains(element))
-                {
-                    stack.Push(element);
-                }
-                else if(closing.Contains(element))
-                {
-                    var lastElement = stack.Pop();
-                    var openingIndex = Array.IndexOf(opening, lastElement);
-                    var closingIndex = Array.IndexOf(closing, element);
+			foreach (char element in input)
+			{
+				if (opening.Contains(element))
+				{
+					stack.Push(element);
+				}
+				else if (closing.Contains(element))
+				{
+					char lastElement = stack.Pop();
+					int openingIndex = Array.IndexOf(opening, lastElement);
+					int closingIndex = Array.IndexOf(closing, element);
 
-                    if(openingIndex != closingIndex)
-                    {
-                        Console.WriteLine("NO");
-                        Environment.Exit(0);
-                    }
-                }
-            }
+					if (openingIndex != closingIndex)
+					{
+						Console.WriteLine("NO");
+						Environment.Exit(0);
+					}
+				}
+			}
 
-            if (stack.Any())
-            {
-                Console.WriteLine("NO");
-            }
-            else
-            {
-                Console.WriteLine("YES");
-            }
-        }
-    }
+			if (stack.Any())
+			{
+				Console.WriteLine("NO");
+			}
+			else
+			{
+				Console.WriteLine("YES");
+			}
+		}
+	}
 }

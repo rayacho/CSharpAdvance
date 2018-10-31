@@ -12,7 +12,7 @@ namespace EvenTimes
 
 			for(int i = 0; i < n; i++)
 			{
-				var number = int.Parse(Console.ReadLine());
+				int number = int.Parse(Console.ReadLine());
 				if (!numbers.ContainsKey(number))
 					numbers.Add(number, 1);
 				else numbers[number]++;

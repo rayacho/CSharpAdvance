@@ -12,9 +12,9 @@ namespace PeriodicTable
 
 			for(int i = 0; i < n; i++)
 			{
-				var line = Console.ReadLine().Split(' ');
+				string[] line = Console.ReadLine().Split(' ');
 
-				foreach(var element in line)
+				foreach(string element in line)
 				{
 					if (!elements.ContainsKey(element))
 						elements.Add(element, 1);

@@ -17,7 +17,7 @@ namespace _2._4._Treasure_Map
 
 				MatchCollection matches = Regex.Matches(input, pattern);
 
-				var correctMatch = matches[matches.Count / 2];
+				Match correctMatch = matches[matches.Count / 2];
 
 				string streetName = correctMatch.Groups["streetName"].Value;
 				string streetNumber = correctMatch.Groups["streetNumber"].Value;

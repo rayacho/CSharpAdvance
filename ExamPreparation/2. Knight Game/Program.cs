@@ -6,7 +6,7 @@ namespace _2._Knight_Game
 	{
 		static void Main(string[] args)
 		{
-			var boardSize = int.Parse(Console.ReadLine());
+			int boardSize = int.Parse(Console.ReadLine());
 			char[][] board = new char[boardSize][];
 
 			for (int counter = 0; counter < boardSize; counter++)
@@ -29,7 +29,6 @@ namespace _2._Knight_Game
 				}
 
 				int currentAttackPositions = 0;
-
 				for (int row = 0; row < boardSize; row++)
 				{
 					for (int column = 0; column < boardSize; column++)

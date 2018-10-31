@@ -19,7 +19,7 @@ namespace UniqueUsernames
 
 			foreach(var name in names)
 			{
-				var key = name.Key;
+				string key = name.Key;
 				Console.WriteLine(key);
 			}
 		}

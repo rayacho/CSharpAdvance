@@ -8,8 +8,8 @@ namespace Ranking
 	{
 		static void Main(string[] args)
 		{
-			var contests = new Dictionary<string, string>();
-			var students = new Dictionary<string, Dictionary<string, int>>();
+			Dictionary<string, string> contests = new Dictionary<string, string>();
+			Dictionary<string, Dictionary<string, int>> students = new Dictionary<string, Dictionary<string, int>>();
 			string input = Console.ReadLine();
 
 			while(input != "end of contests")

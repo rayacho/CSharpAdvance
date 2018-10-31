@@ -10,7 +10,7 @@ namespace PredicateForNames
 
 			int length = int.Parse(Console.ReadLine());
 			string[] names = Console.ReadLine().Split(' ');
-			foreach (var name in names)
+			foreach (string name in names)
 			{
 				if (equal(name, length) <= 0)
 					Console.WriteLine(name);

@@ -59,9 +59,7 @@ namespace TheHeiganDance
 		private static bool isPlayerInDamageZone(int[][] damageArea)
 		{
 			bool isInRowsHit = damageArea[0].Contains(playerRow);
-
 			bool isInColsHit = damageArea[1].Contains(playerCol);
-
 			return isInRowsHit && isInColsHit;
 		}
 
@@ -77,7 +75,6 @@ namespace TheHeiganDance
 			}
 			for (int i = 0; i < 3; i++)
 			{
-
 				damageArea[1][i] = colHit + i - 1;
 			}
 			return damageArea;

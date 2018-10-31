@@ -13,10 +13,7 @@ namespace RadioactiveBunnies
 
 		static void Main(string[] args)
 		{
-			int[] dimensions = Console.ReadLine()
-				.Split().
-				Select(int.Parse).
-				ToArray();
+			int[] dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
 			board = ReadAndFillMatrix(dimensions);
 			char[] movements = Console.ReadLine().ToCharArray();
