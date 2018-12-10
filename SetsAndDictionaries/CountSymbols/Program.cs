@@ -19,8 +19,8 @@ namespace CountSymbols
 
 			foreach(var symbol in symbols)
 			{
-				var key = symbol.Key;
-				var value = symbol.Value;
+				char key = symbol.Key;
+				int value = symbol.Value;
 				Console.WriteLine($"{key}: {value} time/s");
 			}
 		}

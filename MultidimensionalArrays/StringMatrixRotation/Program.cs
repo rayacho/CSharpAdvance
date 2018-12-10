@@ -55,7 +55,7 @@ namespace StringMatrixRotation
 
 		private static void PrintMatrix(char[][] matrix)
 		{
-			foreach (var row in matrix)
+			foreach (char[] row in matrix)
 			{
 				Console.WriteLine(string.Join("", row));
 			}
@@ -87,7 +87,7 @@ namespace StringMatrixRotation
 
 		private static int GetRotationDegrees()
 		{
-			string input = Console.ReadLine().Trim(); // "Rotate(degrees)"
+			string input = Console.ReadLine().Trim();
 			int degrees = int.Parse(input.Substring("Rotate(".Length, input.Length - 1 - "Rotate(".Length));
 			degrees %= 360;
 

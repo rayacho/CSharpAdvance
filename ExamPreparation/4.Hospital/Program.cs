@@ -32,7 +32,9 @@ namespace _04.Hospital
 				doctors[dfn].Add(patient);
 				line = Console.ReadLine();
 			}
+
 			line = Console.ReadLine().Trim();
+
 			while (line != "End")
 			{
 				string[] token = line.Split().ToArray();

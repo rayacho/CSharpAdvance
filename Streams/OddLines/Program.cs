@@ -9,7 +9,7 @@ namespace OddLines
 		{
 			using (StreamReader stream = new StreamReader(@"D:\text.txt"))
 			{
-				var lineNumber = 0;
+				int lineNumber = 0;
 
 				string line;
 

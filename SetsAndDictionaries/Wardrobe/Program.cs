@@ -14,7 +14,7 @@ namespace Wardrobe
 
 			for(int i = 0; i < n; i++)
 			{
-				var input = Console.ReadLine().Split(' ', ',');
+				string[] input = Console.ReadLine().Split(' ', ',');
 				List<string> clooths = new List<string>();
 				string[] clothing = { };
 				int p = 0; 
@@ -25,7 +25,7 @@ namespace Wardrobe
 					p++;
 				}
 
-				foreach(var cloth in clothing)
+				foreach(string cloth in clothing)
 				{ 
 					if (!clothes.ContainsKey(cloth))
 						clothes.Add(cloth, 1);
@@ -35,7 +35,7 @@ namespace Wardrobe
 					clooths.Add(cloth);
 				}
 
-				var colour = input[0];
+				string colour = input[0];
 				if (!colours.ContainsKey(colour))
 					colours.Add(colour, clooths);
 			}

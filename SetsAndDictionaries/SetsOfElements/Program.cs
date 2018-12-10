@@ -15,8 +15,7 @@ namespace SetsOfElements
 			for(int i = 0; i < nm[0]; i++)
 			{
 				int nNumber = int.Parse(Console.ReadLine());
-				if (!numbersN.ContainsKey(nNumber))
-					numbersN.Add(nNumber, 1);
+				if (!numbersN.ContainsKey(nNumber))numbersN.Add(nNumber, 1);
 			}
 
 			for (int i = 0; i < nm[1]; i++)

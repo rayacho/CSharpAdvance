@@ -89,7 +89,6 @@ namespace Infernolll
 				default:
 
 					throw new ArgumentException();
-
 			}
 		}
 	}

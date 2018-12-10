@@ -23,7 +23,7 @@ namespace PeriodicTable
 
 			foreach(var element in elements)
 			{
-				var key = element.Key;
+				string key = element.Key;
 				Console.Write(key + " ");
 			}
 		}

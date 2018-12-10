@@ -24,7 +24,7 @@ namespace AppliedArithmetics
 				{
 					case "add":
 						{
-							foreach (var number in input)
+							foreach (int number in input)
 							{
 								input[i] = (add(number));
 								i++;
@@ -34,7 +34,7 @@ namespace AppliedArithmetics
 						break;
 					case "multiply":
 						{
-							foreach (var number in input)
+							foreach (int number in input)
 							{
 								input[i] = (multiply(number));
 								i++;
@@ -44,7 +44,7 @@ namespace AppliedArithmetics
 						break;
 					case "subtract":
 						{
-							foreach (var number in input)
+							foreach (int number in input)
 							{
 								input[i] = (subtract(number));
 								i++;
@@ -54,7 +54,7 @@ namespace AppliedArithmetics
 						break;
 					case "print":
 						{
-							foreach (var number in input)
+							foreach (int number in input)
 							{
 								print(number);
 							}

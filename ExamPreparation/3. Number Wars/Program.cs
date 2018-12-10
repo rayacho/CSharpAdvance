@@ -69,7 +69,7 @@ namespace _3._Number_Wars
 				}
 			}
 
-			var result = "";
+			string result = "";
 
 			if (firstAllCards.Count == secondAllCards.Count)
 				result = "Draw";
@@ -83,7 +83,7 @@ namespace _3._Number_Wars
 
 		private static void AddCardsToWinner(List<string> cardsHand, Queue<string> firstAllCard)
 		{
-			foreach (var card in cardsHand.OrderByDescending(c => GetNumber(c)).ThenByDescending(c => GetChar(c)))
+			foreach (string card in cardsHand.OrderByDescending(c => GetNumber(c)).ThenByDescending(c => GetChar(c)))
 				firstAllCard.Enqueue(card);
 		}
 

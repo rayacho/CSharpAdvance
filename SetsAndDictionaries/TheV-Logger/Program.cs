@@ -51,7 +51,7 @@ namespace TheV_Logger
 
 				if(counter == 1)
 				{
-					foreach (var follower in item.Value["followers"])
+					foreach (string follower in item.Value["followers"])
 					{
 						Console.WriteLine($"*  {follower}");
 					}

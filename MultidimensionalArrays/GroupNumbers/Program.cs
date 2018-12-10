@@ -10,7 +10,7 @@ namespace GroupNumbers
 			int[] sizes = new int[3];
 			int[] input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
 
-			foreach (var number in input)
+			foreach (int number in input)
 			{
 				sizes[number % 3]++;
 			}
@@ -24,7 +24,7 @@ namespace GroupNumbers
 
 			int[] index = new int[3];
 
-			foreach (var number in input)
+			foreach (int number in input)
 			{
 				int remainder = number % 3;
 				jaggedArray[remainder][index[remainder]] = number;

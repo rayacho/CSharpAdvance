@@ -7,11 +7,11 @@ namespace WordCount
 
 		static void Main(string[] args)
 		{
-			using (var readStream = new StreamReader(@"D:\text.txt"))
+			using (StreamReader readStream = new StreamReader(@"D:\text.txt"))
 			{
-				using (var readWords = new StreamReader(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\words.txt"))
+				using (StreamReader readWords = new StreamReader(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\words.txt"))
 				{
-					using (var writeStream = new StreamWriter(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\WordCount\result.txt"))
+					using (StreamWriter writeStream = new StreamWriter(@"C:\Users\RAYA CHORBADZHIYSKA\Desktop\CSharpAdvanced\CSharpAdvance\WordCount\result.txt"))
 					{
 						int times1 = 0, times2 = 0, times3 = 0;
 						string firstWord = readWords.ReadLine();
